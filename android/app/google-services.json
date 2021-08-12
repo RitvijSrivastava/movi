@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "371251522171",
+    "project_id": "movi-d7c43",
+    "storage_bucket": "movi-d7c43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371251522171:android:a5f0222aa213a2698f90de",
+        "android_client_info": {
+          "package_name": "com.example.movi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371251522171-33rj0qn961cs61gguqgqmf7nv1uqph22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.movi",
+            "certificate_hash": "6cb79964e1047aaf7a404373467c9a3628a2c7dd"
+          }
+        },
+        {
+          "client_id": "371251522171-uo6081iq98k0mt1ktpbtarcm2u2e1ovl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc3VDdCeQYMlJp7UXwCBEUrCkcCQj8lck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371251522171-uo6081iq98k0mt1ktpbtarcm2u2e1ovl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

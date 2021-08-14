@@ -43,16 +43,18 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: StreamBuilder(
-          stream: _authBloc.authStateChanges,
-          initialData: _authBloc.currentUser,
-          builder: (context, snapshot) {
-            if (snapshot.hasData && snapshot.data != null) {
-              return HomePage();
-            } else {
-              return LoginPage();
-            }
-          },
+        body: SafeArea(
+          child: StreamBuilder(
+            stream: _authBloc.authStateChanges,
+            initialData: _authBloc.currentUser,
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data != null) {
+                return HomePage();
+              } else {
+                return LoginPage();
+              }
+            },
+          ),
         ),
       ),
     );

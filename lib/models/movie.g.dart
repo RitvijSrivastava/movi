@@ -17,21 +17,24 @@ class MovieAdapter extends TypeAdapter<Movie> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Movie(
-      fields[0] as String,
-      fields[1] as String,
-      fields[2] as String,
+      id: fields[0] as String,
+      movieName: fields[1] as String,
+      movieDirector: fields[2] as String,
+      moviePoster: fields[3] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Movie obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.movieName)
+      ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.movieDirector)
+      ..write(obj.movieName)
       ..writeByte(2)
+      ..write(obj.movieDirector)
+      ..writeByte(3)
       ..write(obj.moviePoster);
   }
 

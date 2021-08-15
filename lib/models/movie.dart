@@ -5,13 +5,21 @@ part 'movie.g.dart';
 @HiveType(typeId: 0)
 class Movie extends HiveObject {
   @HiveField(0)
-  final String movieName;
+  final String id;
 
   @HiveField(1)
-  final String movieDirector;
+  final String movieName;
 
   @HiveField(2)
-  final String moviePoster;
+  final String movieDirector;
 
-  Movie(this.movieName, this.movieDirector, this.moviePoster);
+  @HiveField(3)
+  final String? moviePoster;
+
+  Movie({
+    required this.id,
+    required this.movieName,
+    required this.movieDirector,
+    this.moviePoster,
+  });
 }

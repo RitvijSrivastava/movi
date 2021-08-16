@@ -5,12 +5,15 @@ import 'package:movi/blocs/auth_bloc/auth_bloc.dart';
 import 'package:movi/models/movie.dart';
 import 'package:movi/pages/home_page/HomePage.dart';
 import 'package:movi/pages/login_page/LoginPage.dart';
-import 'package:movi/utils/Loading.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDir.path);
+  Hive.registerAdapter(MovieAdapter());
 
   runApp(MyApp());
 }
@@ -23,38 +26,25 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _authBloc = AuthBloc();
 
-  initHive() async {
-    final appDocsDir = await getApplicationDocumentsDirectory();
-    Hive.init(appDocsDir.path);
-    Hive.registerAdapter(MovieAdapter());
-  }
-
-  @override
-  void initState() {
-    initHive();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFFF6F4E4),
+        backgroundColor: Color(0xFFF6F4E4),
       ),
-      home: Scaffold(
-        body: SafeArea(
-          child: StreamBuilder(
-            stream: _authBloc.authStateChanges,
-            initialData: _authBloc.currentUser,
-            builder: (context, snapshot) {
-              if (snapshot.hasData && snapshot.data != null) {
-                return HomePage();
-              } else {
-                return LoginPage();
-              }
-            },
-          ),
+      home: SafeArea(
+        child: StreamBuilder(
+          stream: _authBloc.authStateChanges,
+          initialData: _authBloc.currentUser,
+          builder: (context, snapshot) {
+            if (snapshot.hasData && snapshot.data != null) {
+              return HomePage();
+            } else {
+              return LoginPage();
+            }
+          },
         ),
       ),
     );

@@ -41,7 +41,8 @@ class _HomePageState extends State<HomePage> {
                       SliverAppBar(
                         expandedHeight: 120.0,
                         toolbarHeight: 100.0,
-                        pinned: true,
+                        floating: true,
+                        shadowColor: Colors.transparent,
                         title: Text("Movies List"),
                         textTheme: TextTheme(
                           headline6: TextStyle(
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             )
                           : SliverFixedExtentList(
-                              itemExtent: 230.0,
+                              itemExtent: 200.0,
                               delegate: SliverChildBuilderDelegate(
                                 (BuildContext context, int index) {
                                   Movie movie = box.getAt(index) as Movie;
@@ -162,8 +163,8 @@ class _HomePageState extends State<HomePage> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Container(
-                  width: 150.0,
-                  height: 300.0,
+                  width: 120,
+                  height: MediaQuery.of(context).size.height,
                   child: movie.moviePoster == null
                       ? Image.asset(
                           'assets/no-image.png',

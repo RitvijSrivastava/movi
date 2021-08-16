@@ -6,4 +6,4 @@ The APK can be found [here](https://drive.google.com/file/d/1zEqPQjIlzPyMcn5BdRI
 
 ## App Screens
 
-![Login Page](readme-images/login-page.jpeg) ![Home Screen with no movies](readme-images/home-screen-no-movies.jpeg) ![Add Movie Screen](readme-images/add-movie.jpeg) ![Home Screen with movies](readme-images/home-screen-with-movies.jpeg) ![Movie Info page](readme-images/movie-info.jpeg) ![Edit movie page](readme-images/edit-movie.jpeg)
+<img height="480px" src="readme-images/login-page.jpeg"> <img height="480px" src="readme-images/home-screen-no-movies.jpeg"> <img height="480px" src="readme-images/add-movie.jpeg"> <img height="480px" src="readme-images/home-screen-with-movies.jpeg"> <img height="480px" src="readme-images/movie-info.jpeg"> <img height="480px" src="readme-images/edit-movie.jpeg">
